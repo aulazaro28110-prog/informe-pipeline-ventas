@@ -47,6 +47,42 @@ El script genera el informe en **dos formatos a la vez**: texto en [`informe_sem
 
 ---
 
+## ✨ Emails de seguimiento con IA (la función estrella)
+
+Además del informe, el script **redacta el email de seguimiento de cada deal en riesgo** y los guarda en [`emails_seguimiento.md`](emails_seguimiento.md). Aquí es donde la IA aporta algo que una regla `if/else` no puede: **escribir texto nuevo y distinto** para cada caso.
+
+La gracia está en el contraste. El mismo deal, redactado de dos formas:
+
+**🤖 Modo plantilla (gratis, sin IA)** — correcto, pero todos los emails salen calcados:
+```
+Asunto: Seguimiento — Metalúrgica Ebro
+
+Hola Sergio Cruz,
+Te escribo para retomar nuestra propuesta de Metalúrgica Ebro (39.000 €).
+Lo marco como prioritario porque: fecha de cierre ya superada.
+¿Tienes un hueco esta semana para hablarlo?
+Un saludo, Alvaro
+```
+
+**🧠 Modo IA (con `ANTHROPIC_API_KEY`)** — personalizado y con tacto comercial:
+```
+Asunto: Retomamos lo de Metalúrgica Ebro antes de que se enfríe
+
+Hola Sergio,
+revisando la cuenta vi que la fecha que habíamos fijado para cerrar
+ya quedó atrás, y no quiero que la propuesta (39.000 €) se nos enfríe
+por una cuestión de calendario. ¿Sigue encajando por vuestra parte o
+ha cambiado algo? Si te viene bien, te reservo 15 minutos esta semana
+para ajustar lo que haga falta y darle salida.
+Un abrazo, Álvaro
+```
+
+**Una regla nunca escribiría el segundo.** El script intenta el modo IA si hay clave; si no, usa la plantilla, así que **siempre produce algo** (con o sin coste).
+
+> Sigue valiendo el principio del proyecto: Python decide *qué* deals están en riesgo (el cálculo); la IA solo *redacta* (el texto). Nunca se le pide a la IA que haga las cuentas.
+
+---
+
 ## Decisión técnica que sostiene el proyecto
 
 **Las cuentas las hace Python; el texto solo da forma a esos números.** Nunca se le pasa el CSV crudo a la IA para que sume: los modelos de lenguaje se inventan cifras. Por eso el programa primero calcula los números de forma fiable y solo después los convierte en prosa. Esta separación (cálculo ↔ redacción) es lo que hace que el informe sea de fiar.
@@ -81,7 +117,7 @@ python generar_informe.py
 python generar_informe.py otros_deals.csv
 ```
 
-A partir del CSV de entrada genera **dos archivos**: `informe_semanal.md` (texto, ideal para pegar en un email o en Slack) e `informe_semanal.html` (versión web que se abre en el navegador). Ambos se generan siempre, da igual el modo de redacción.
+A partir del CSV de entrada genera **tres archivos**: `informe_semanal.md` (texto, ideal para pegar en un email o en Slack), `informe_semanal.html` (versión web que se abre en el navegador) y `emails_seguimiento.md` (los emails de seguimiento de los deals en riesgo). Todos se generan siempre, da igual el modo de redacción.
 
 ## Formato del CSV de entrada
 
@@ -111,6 +147,7 @@ Definidas como constantes al inicio de `generar_informe.py`, para ajustarlas a c
 | `deals.csv` | Datos de ejemplo (24 deals ficticios, sin datos reales). |
 | `informe_semanal.md` | El informe en texto que produce el script (salida de ejemplo). |
 | `informe_semanal.html` | El mismo informe en versión web (tema oscuro + gráfico de barras). |
+| `emails_seguimiento.md` | Emails de seguimiento de los deals en riesgo (IA o plantilla). |
 | `.gitignore` | Qué no se sube al repositorio (caché, claves...). |
 | `README.md` | Este archivo. |
 | `RESUMEN.md` | Resumen breve del proyecto y de los conceptos de Python aplicados. |

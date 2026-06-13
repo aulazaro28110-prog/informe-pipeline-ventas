@@ -45,6 +45,7 @@ ETAPAS_CERRADAS = ["Cerrado ganado", "Cerrado perdido"]
 ARCHIVO_ENTRADA = "deals.csv"
 ARCHIVO_SALIDA = "informe_semanal.md"
 ARCHIVO_SALIDA_HTML = "informe_semanal.html"
+ARCHIVO_EMAILS = "emails_seguimiento.md"   # emails de seguimiento de deals en riesgo
 
 
 # ============================================================
@@ -293,6 +294,93 @@ def redactar_api(m):
 
 
 # ============================================================
+# 4B-bis) EMAILS DE SEGUIMIENTO  ·  lo que una regla NO puede hacer
+# ============================================================
+# Esta es la diferencia real frente al validador de leads: aquí la IA no
+# "reordena" datos, GENERA texto nuevo (un email distinto para cada deal).
+# Igual que siempre: Python decide QUÉ deals están en riesgo; la IA solo
+# pone las palabras. Si no hay clave, una plantilla hace un email decente.
+
+def redactar_email_plantilla(deal, motivo):
+    """Email de seguimiento BÁSICO (plantilla, gratis).
+    Sirve de respaldo si no hay clave de API y como punto de
+    comparación con la versión que escribe la IA."""
+    return (
+        f"Asunto: Seguimiento — {deal['empresa']}\n\n"
+        f"Hola {deal['contacto']},\n\n"
+        f"Te escribo para retomar nuestra propuesta de {deal['empresa']} "
+        f"({eur(deal['importe_eur'])}). Lo marco como prioritario porque: "
+        f"{motivo}.\n\n"
+        f"¿Tienes un hueco esta semana para hablarlo?\n\n"
+        f"Un saludo,\n{deal['responsable']}"
+    )
+
+
+def _email_con_ia(cliente, deal, motivo):
+    """Pide a Claude que escriba UN email de seguimiento para este deal.
+    Le pasamos una FICHA con los datos ya calculados (nunca el CSV crudo).
+    Si la llamada falla por lo que sea, cae a la plantilla: nunca rompe."""
+    ficha = (
+        f"Empresa: {deal['empresa']}\n"
+        f"Persona de contacto: {deal['contacto']}\n"
+        f"Comercial que firma el email: {deal['responsable']}\n"
+        f"Importe del deal: {eur(deal['importe_eur'])}\n"
+        f"Etapa actual: {deal['etapa']}\n"
+        f"Motivo por el que urge: {motivo}"
+    )
+    try:
+        respuesta = cliente.messages.create(
+            model="claude-sonnet-4-6",
+            max_tokens=350,
+            system=(
+                "Eres un comercial B2B con tablas. Escribe un email de "
+                "seguimiento breve (4-6 líneas), cercano y profesional, para "
+                "reactivar este deal sin sonar agresivo. Empieza por una línea "
+                "'Asunto: ...'. Usa SOLO los datos de la ficha, no inventes "
+                "nada. Firma con el nombre del comercial."
+            ),
+            messages=[{"role": "user", "content": ficha}],
+        )
+        return respuesta.content[0].text
+    except Exception as error:
+        print(f"⚠️  La IA falló con {deal['empresa']} ({error}). Uso plantilla.")
+        return redactar_email_plantilla(deal, motivo)
+
+
+def redactar_emails_seguimiento(m):
+    """Genera un email de seguimiento por cada deal en riesgo y los junta
+    en un documento Markdown. Usa la IA si hay ANTHROPIC_API_KEY (tono
+    natural, distinto en cada email); si no, la plantilla gratuita."""
+    en_riesgo = m["en_riesgo"]
+    if not en_riesgo:
+        return "# 📧 Emails de seguimiento\n\n¡Ningún deal en riesgo esta semana! 🎉\n"
+
+    # Preparamos el cliente de IA UNA sola vez (no en cada vuelta del bucle).
+    cliente = None
+    if os.environ.get("ANTHROPIC_API_KEY"):
+        try:
+            import anthropic
+            cliente = anthropic.Anthropic()
+        except ImportError:
+            print("Aviso: falta la librería 'anthropic'. Emails en modo plantilla.")
+
+    bloques = []
+    for deal, motivo in en_riesgo:
+        if cliente is not None:
+            email = _email_con_ia(cliente, deal, motivo)
+        else:
+            email = redactar_email_plantilla(deal, motivo)
+        bloques.append(f"## {deal['empresa']} — {motivo}\n\n{email}")
+
+    modo = "IA (Claude)" if cliente else "plantilla (gratis)"
+    cabecera = (
+        f"# 📧 Emails de seguimiento de deals en riesgo\n"
+        f"*Generados automáticamente · modo: {modo} · {len(en_riesgo)} email(s)*\n\n"
+    )
+    return cabecera + "\n\n---\n\n".join(bloques)
+
+
+# ============================================================
 # 4C) REDACTAR EL INFORME  ·  MODO HTML (web, tema oscuro, gráfico en CSS)
 # ============================================================
 def barra_css(valor, maximo):
@@ -462,11 +550,13 @@ def main():
 
     guardar(informe, ARCHIVO_SALIDA)                         # informe de texto (.md)
     guardar(redactar_html(metricas), ARCHIVO_SALIDA_HTML)    # informe web (.html)
+    guardar(redactar_emails_seguimiento(metricas), ARCHIVO_EMAILS)  # emails (IA/plantilla)
 
     print(f"Informe generado con modo: {modo}")
     print(f"Fecha de referencia (hoy): {FECHA_REFERENCIA.strftime('%d/%m/%Y')}")
     print(f"Leídos {len(deals)} deals de '{ruta_csv}'.")
-    print(f"Generados: {ARCHIVO_SALIDA} (texto) y {ARCHIVO_SALIDA_HTML} (web).")
+    print(f"Generados: {ARCHIVO_SALIDA} (texto), {ARCHIVO_SALIDA_HTML} (web) "
+          f"y {ARCHIVO_EMAILS} (emails).")
     print(f"Pipeline activo: {eur(metricas['pipeline_total'])} | "
           f"En riesgo: {len(metricas['en_riesgo'])} | "
           f"Estancados: {len(metricas['estancados'])}")

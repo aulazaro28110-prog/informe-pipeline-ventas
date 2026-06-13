@@ -19,6 +19,7 @@ formatos: texto (`.md`) y web (`.html`).
 | `generar_informe.py` | Script principal con toda la lógica |
 | `informe_semanal.md` | Salida: informe en texto |
 | `informe_semanal.html` | Salida: informe en web (tema oscuro + gráfico de barras) |
+| `emails_seguimiento.md` | Salida: emails de seguimiento de deals en riesgo (IA o plantilla) |
 | `README.md` | Documentación completa del proyecto |
 | `RESUMEN.md` | Este documento |
 
@@ -62,9 +63,16 @@ formatos: texto (`.md`) y web (`.html`).
 | Hotel Mirasierra | 58.000 € | 70 % |
 | Seguros Atlante | 46.000 € | 80 % |
 
+## Función estrella: emails de seguimiento con IA
+El script no solo informa: **redacta el email de seguimiento de cada deal en
+riesgo** (`emails_seguimiento.md`). Es la diferencia real frente a un script de
+reglas: la IA *genera* texto nuevo y distinto para cada caso, algo que un
+`if/else` no puede hacer. Si no hay clave, una plantilla escribe un email
+correcto (pero igual para todos); con `ANTHROPIC_API_KEY`, Claude lo personaliza.
+
 ## Dos modos de redacción
 - **Modo plantilla (gratis):** Python puro, sin coste ni conexión. Funciona siempre.
-- **Modo API (opcional, de pago):** si existe `ANTHROPIC_API_KEY`, la API de Claude redacta con un tono más natural. El programa lo detecta solo; si no hay clave, usa la plantilla.
+- **Modo API (opcional, de pago):** si existe `ANTHROPIC_API_KEY`, la API de Claude redacta (informe y emails) con un tono más natural. El programa lo detecta solo; si no hay clave, usa la plantilla.
 
 ## Para qué sirve
 Útil para cualquier equipo comercial que cada semana tiene que mirar el CRM y
