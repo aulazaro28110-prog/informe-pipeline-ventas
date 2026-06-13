@@ -43,7 +43,7 @@ Un script que:
 3. Empujar el mayor deal abierto: Consultora Norte (64.000 €).
 ```
 
-(Informe completo en [`informe_semanal.md`](informe_semanal.md).)
+El script genera el informe en **dos formatos a la vez**: texto en [`informe_semanal.md`](informe_semanal.md) y una **versión web** en [`informe_semanal.html`](informe_semanal.html) (tema oscuro, gráfico de barras en CSS puro, sin librerías externas).
 
 ---
 
@@ -81,7 +81,7 @@ python generar_informe.py
 python generar_informe.py otros_deals.csv
 ```
 
-Genera el archivo `informe_semanal.md` a partir del CSV de entrada.
+A partir del CSV de entrada genera **dos archivos**: `informe_semanal.md` (texto, ideal para pegar en un email o en Slack) e `informe_semanal.html` (versión web que se abre en el navegador). Ambos se generan siempre, da igual el modo de redacción.
 
 ## Formato del CSV de entrada
 
@@ -109,13 +109,65 @@ Definidas como constantes al inicio de `generar_informe.py`, para ajustarlas a c
 |---|---|
 | `generar_informe.py` | El script principal. |
 | `deals.csv` | Datos de ejemplo (24 deals ficticios, sin datos reales). |
-| `informe_semanal.md` | El informe que produce el script (salida de ejemplo). |
+| `informe_semanal.md` | El informe en texto que produce el script (salida de ejemplo). |
+| `informe_semanal.html` | El mismo informe en versión web (tema oscuro + gráfico de barras). |
 | `.gitignore` | Qué no se sube al repositorio (caché, claves...). |
 | `README.md` | Este archivo. |
+| `RESUMEN.md` | Resumen breve del proyecto y de los conceptos de Python aplicados. |
 
 ## Stack
 
-Python 3 · `csv` · `datetime` · (opcional) API de Anthropic
+Python 3 · `csv` · `datetime` · `html` · (opcional) API de Anthropic
+
+---
+
+## Conceptos de Python aplicados
+
+Proyecto pensado también como práctica de programación. Conceptos que pone en juego:
+
+- **Funciones** (`def`) con una responsabilidad cada una: leer datos, calcular métricas, redactar texto, generar HTML, guardar archivos.
+- **Módulo `csv`** para leer datos reales desde un archivo, sin librerías externas.
+- **Módulo `datetime`** para trabajar con fechas (días sin actividad, días hasta el cierre, fecha de hoy automática).
+- **Diccionarios** para mover las métricas de un sitio a otro de forma ordenada.
+- **Condicionales y bucles** (`if/elif/else`, `for`) para clasificar cada deal.
+- **Manejo de errores** (`try/except`, `raise ValueError`) para aguantar datos sucios sin romperse.
+- **Argumentos de línea de comandos** (`sys.argv`) para pasarle cualquier CSV.
+- **Variables de entorno** (`os.environ`) para activar la API sin escribir nunca la clave en el código.
+- **Generación de archivos** (`open`, `write`) en dos formatos: Markdown y HTML.
+- **Escapado de texto** (`html.escape`) para que el HTML sea seguro y no se rompa con caracteres raros.
+
+---
+
+## Casos de uso reales
+
+- **Responsable comercial**: prepara en segundos el informe de pipeline del lunes en vez de redactarlo a mano.
+- **Dirección de ventas**: recibe siempre el mismo formato de informe, comparable semana a semana.
+- **Equipo de ventas**: detecta automáticamente los deals estancados o en riesgo antes de que se enfríen.
+- **Reporte a cliente/dirección**: la versión `.html` se abre en el navegador o se adjunta tal cual.
+
+---
+
+## Limitaciones conocidas
+
+- Trabaja sobre una **exportación CSV**; no se conecta todavía en directo al CRM (eso sería el siguiente paso vía API).
+- Las métricas son tan buenas como los datos del CSV: si una etapa está mal escrita, ese deal puede contarse de forma distinta a la esperada.
+- El modo API es **de pago** y requiere una clave propia (`ANTHROPIC_API_KEY`); sin clave, el informe se redacta igual con la plantilla gratuita.
+
+---
+
+## Próximos pasos (escalabilidad)
+
+- Conectar directamente con el CRM (HubSpot, Pipedrive, Salesforce) vía API en lugar de exportar a CSV.
+- Enviar el informe automáticamente por email o a un canal de Slack cada lunes.
+- Guardar el histórico semanal para ver la evolución del pipeline en el tiempo.
+- Añadir gráficos adicionales (evolución mensual, embudo por etapa).
+
+---
+
+## Autor
+
+**Álvaro Utazu Lázaro** · En formación como AI Engineer
+Proyecto desarrollado con [Claude Code](https://claude.ai) (Anthropic) como parte del programa de aprendizaje práctico de IA.
 
 ---
 
