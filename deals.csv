@@ -1,0 +1,25 @@
+id,empresa,contacto,etapa,importe_eur,responsable,ultima_actividad,cierre_previsto,probabilidad
+1,Construcciones Avila SL,María Soler,Propuesta enviada,18000,Alvaro,2026-06-09,2026-06-20,0.6
+2,Logística Tajo,Pedro Nieto,Negociación,42000,Alvaro,2026-06-10,2026-06-18,0.8
+3,Clínica Dental Sonríe,Lucía Vega,Cualificación,6500,Alvaro,2026-06-08,2026-07-10,0.3
+4,Talleres Hermanos Ruiz,Jorge Ruiz,Prospección,9000,Alvaro,2026-05-12,2026-06-15,0.1
+5,Bodegas Ribera Nova,Ana Cano,Propuesta enviada,27500,Alvaro,2026-05-08,2026-06-05,0.5
+6,Gimnasios Pulse,Iván Mora,Negociación,15000,Alvaro,2026-06-07,2026-06-25,0.75
+7,Inmobiliaria Castilla,Sara Gil,Cerrado ganado,33000,Alvaro,2026-06-06,2026-06-06,1.0
+8,Asesoría Fiscal Lex,Tomás Díaz,Cualificación,4800,Alvaro,2026-06-10,2026-07-15,0.3
+9,Distribuciones Frío Sur,Carla Pons,Propuesta enviada,21000,Alvaro,2026-05-05,2026-06-10,0.5
+10,Hotel Mirasierra,Raúl Ortega,Negociación,58000,Alvaro,2026-06-09,2026-06-30,0.7
+11,Panadería La Espiga,Nuria Sanz,Prospección,3200,Alvaro,2026-06-03,2026-07-20,0.1
+12,Transportes Duero,Hugo León,Cualificación,12500,Alvaro,2026-04-28,2026-06-12,0.2
+13,Óptica Visión Plus,Elena Marco,Propuesta enviada,7600,Alvaro,2026-06-05,2026-06-22,0.55
+14,Seguros Atlante,Diego Vidal,Negociación,46000,Alvaro,2026-06-10,2026-07-05,0.8
+15,Academia Idiomas Globo,Paula Ferrer,Cerrado perdido,11000,Alvaro,2026-06-02,2026-06-02,0.0
+16,Floristería Jardín,Marta Plaza,Prospección,2100,Alvaro,2026-06-08,2026-07-25,0.1
+17,Metalúrgica Ebro,Sergio Cruz,Propuesta enviada,39000,Alvaro,2026-05-02,2026-06-08,0.5
+18,Editorial Faro,Beatriz Lara,Cualificación,8800,Alvaro,2026-06-09,2026-07-12,0.35
+19,Restaurante El Roble,Andrés Gil,Negociación,9500,Alvaro,2026-06-11,2026-06-28,0.7
+20,Farmacia Centro,Cristina Ramos,Propuesta enviada,5400,Alvaro,2026-05-09,2026-06-14,0.5
+21,Autoescuela Vía Rápida,Marcos Peña,Prospección,4300,Alvaro,2026-06-04,2026-08-01,0.1
+22,Consultora Norte,Laura Bravo,Negociación,64000,Alvaro,2026-06-10,2026-07-08,0.85
+23,Carpintería Roble Fino,Víctor Sáez,Cualificación,13700,Alvaro,2026-04-30,2026-06-16,0.2
+24,Spa Aguas Claras,Rocío Herrero,Propuesta enviada,22000,Alvaro,2026-06-06,2026-06-24,0.6

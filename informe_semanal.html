@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Informe de pipeline · 13/06/2026</title>
+<style>
+    :root { --bg:#0d1117; --panel:#161b22; --texto:#e6edf3; --suave:#8b949e;
+            --acento:#22d3ee; --borde:#30363d; }
+    * { box-sizing:border-box; }
+    body { margin:0; padding:2rem; background:var(--bg); color:var(--texto);
+           font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.5; }
+    .contenedor { max-width:880px; margin:0 auto; }
+    h1 { color:var(--acento); border-bottom:1px solid var(--borde); padding-bottom:.5rem; }
+    h2 { margin-top:2rem; font-size:1.1rem; }
+    .panel { background:var(--panel); border:1px solid var(--borde);
+             border-radius:10px; padding:1rem 1.25rem; margin:1rem 0; }
+    .kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:.75rem; }
+    .kpi { background:var(--bg); border:1px solid var(--borde); border-radius:8px; padding:.7rem 1rem; }
+    .kpi .label { color:var(--suave); font-size:.8rem; }
+    .kpi .valor { font-size:1.25rem; font-weight:700; }
+    .fila { display:flex; align-items:center; gap:.75rem; margin:.45rem 0; }
+    .fila .nombre { width:150px; color:var(--suave); font-size:.9rem; }
+    .pista { flex:1; background:var(--bg); border-radius:6px; overflow:hidden; }
+    .barra { height:22px; border-radius:6px; }
+    .fila .importe { width:110px; text-align:right; font-variant-numeric:tabular-nums; }
+    ul,ol { padding-left:1.2rem; margin:.3rem 0; }
+    li { margin:.25rem 0; }
+    .pie { color:var(--suave); font-size:.8rem; margin-top:2rem; text-align:center; }
+    </style>
+</head><body><div class='contenedor'>
+<h1>📊 Informe semanal de pipeline · 13/06/2026</h1>
+<div class="panel kpis">
+<div class="kpi"><div class="label">Pipeline total</div><div class="valor">439.900 €</div></div>
+<div class="kpi"><div class="label">Pipeline ponderado</div><div class="valor">271.500 €</div></div>
+<div class="kpi"><div class="label">Dinero en riesgo</div><div class="valor">122.700 € · 28 %</div></div>
+<div class="kpi"><div class="label">Ticket medio</div><div class="valor">19.995 €</div></div>
+<div class="kpi"><div class="label">Conversión</div><div class="valor">50 %</div></div>
+<div class="kpi"><div class="label">Previsión del mes</div><div class="valor">126.620 €</div></div>
+</div>
+<h2>Pipeline por etapa</h2><div class='panel'>
+<div class="fila"><span class="nombre">Negociación</span><span class="pista"><span class="barra" style="width:100%;background:#22d3ee"></span></span><span class="importe">234.500 €</span></div>
+<div class="fila"><span class="nombre">Propuesta enviada</span><span class="pista"><span class="barra" style="width:60%;background:#34d399"></span></span><span class="importe">140.500 €</span></div>
+<div class="fila"><span class="nombre">Cualificación</span><span class="pista"><span class="barra" style="width:20%;background:#a78bfa"></span></span><span class="importe">46.300 €</span></div>
+<div class="fila"><span class="nombre">Prospección</span><span class="pista"><span class="barra" style="width:8%;background:#f472b6"></span></span><span class="importe">18.600 €</span></div>
+</div>
+<h2>⚠️ Deals en riesgo</h2><div class='panel'><ul>
+<li><b>Metalúrgica Ebro</b> (39.000 €) — fecha de cierre ya superada.</li>
+<li><b>Bodegas Ribera Nova</b> (27.500 €) — fecha de cierre ya superada.</li>
+<li><b>Distribuciones Frío Sur</b> (21.000 €) — fecha de cierre ya superada.</li>
+<li><b>Carpintería Roble Fino</b> (13.700 €) — cierre inminente pero aún en fase temprana.</li>
+<li><b>Transportes Duero</b> (12.500 €) — fecha de cierre ya superada.</li>
+<li><b>Talleres Hermanos Ruiz</b> (9.000 €) — cierre inminente pero aún en fase temprana.</li>
+</ul></div>
+<h2>💤 Deals estancados (&gt; 14 días)</h2><div class='panel'><ul>
+<li><b>Transportes Duero</b> (12.500 €) — 46 días sin contacto, en Cualificación.</li>
+<li><b>Carpintería Roble Fino</b> (13.700 €) — 44 días sin contacto, en Cualificación.</li>
+<li><b>Metalúrgica Ebro</b> (39.000 €) — 42 días sin contacto, en Propuesta enviada.</li>
+<li><b>Distribuciones Frío Sur</b> (21.000 €) — 39 días sin contacto, en Propuesta enviada.</li>
+<li><b>Bodegas Ribera Nova</b> (27.500 €) — 36 días sin contacto, en Propuesta enviada.</li>
+<li><b>Farmacia Centro</b> (5.400 €) — 35 días sin contacto, en Propuesta enviada.</li>
+<li><b>Talleres Hermanos Ruiz</b> (9.000 €) — 32 días sin contacto, en Prospección.</li>
+</ul></div>
+<h2>✅ Acciones recomendadas</h2><div class='panel'><ol>
+<li>Rescatar <b>Metalúrgica Ebro</b>: fecha de cierre ya superada.</li>
+<li>Rescatar <b>Bodegas Ribera Nova</b>: fecha de cierre ya superada.</li>
+<li>Empujar el mayor deal abierto: <b>Consultora Norte</b> (64.000 €).</li>
+</ol></div>
+<p class="pie">Generado automáticamente · datos de ejemplo ficticios.</p>
+</div></body></html>

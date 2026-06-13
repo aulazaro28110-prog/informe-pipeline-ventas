@@ -1,0 +1,19 @@
+# Caché de Python (se regenera sola, no debe subirse)
+__pycache__/
+*.py[cod]
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Variables de entorno y claves — ¡NUNCA subir la API key!
+.env
+
+# Prompts / notas de trabajo (uso personal, no van al repo público)
+PROMPT_*.md
+
+# Archivos del sistema operativo / editor
+.DS_Store
+Thumbs.db
+.vscode/
