@@ -64,7 +64,10 @@ def leer_deals(ruta):
 
     deals = []
     descartadas = 0
-    with open(ruta, encoding="utf-8") as f:
+    # utf-8-sig se "come" el BOM que añade Excel al guardar como 'CSV UTF-8'.
+    # Sin esto, el nombre de la primera columna llega con un carácter invisible
+    # y todas las filas se descartarían en silencio.
+    with open(ruta, encoding="utf-8-sig") as f:
         # start=2 porque la fila 1 es la cabecera; los datos empiezan en la 2.
         for numero, fila in enumerate(csv.DictReader(f), start=2):
             try:
