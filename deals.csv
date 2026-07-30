@@ -1,25 +1,24 @@
 id,empresa,contacto,etapa,importe_eur,responsable,ultima_actividad,cierre_previsto,probabilidad
-1,Construcciones Avila SL,María Soler,Propuesta enviada,18000,Alvaro,2026-06-09,2026-06-20,0.6
-2,Logística Tajo,Pedro Nieto,Negociación,42000,Alvaro,2026-06-10,2026-06-18,0.8
-3,Clínica Dental Sonríe,Lucía Vega,Cualificación,6500,Alvaro,2026-06-08,2026-07-10,0.3
-4,Talleres Hermanos Ruiz,Jorge Ruiz,Prospección,9000,Alvaro,2026-05-12,2026-06-15,0.1
-5,Bodegas Ribera Nova,Ana Cano,Propuesta enviada,27500,Alvaro,2026-05-08,2026-06-05,0.5
-6,Gimnasios Pulse,Iván Mora,Negociación,15000,Alvaro,2026-06-07,2026-06-25,0.75
-7,Inmobiliaria Castilla,Sara Gil,Cerrado ganado,33000,Alvaro,2026-06-06,2026-06-06,1.0
-8,Asesoría Fiscal Lex,Tomás Díaz,Cualificación,4800,Alvaro,2026-06-10,2026-07-15,0.3
-9,Distribuciones Frío Sur,Carla Pons,Propuesta enviada,21000,Alvaro,2026-05-05,2026-06-10,0.5
-10,Hotel Mirasierra,Raúl Ortega,Negociación,58000,Alvaro,2026-06-09,2026-06-30,0.7
-11,Panadería La Espiga,Nuria Sanz,Prospección,3200,Alvaro,2026-06-03,2026-07-20,0.1
-12,Transportes Duero,Hugo León,Cualificación,12500,Alvaro,2026-04-28,2026-06-12,0.2
-13,Óptica Visión Plus,Elena Marco,Propuesta enviada,7600,Alvaro,2026-06-05,2026-06-22,0.55
-14,Seguros Atlante,Diego Vidal,Negociación,46000,Alvaro,2026-06-10,2026-07-05,0.8
-15,Academia Idiomas Globo,Paula Ferrer,Cerrado perdido,11000,Alvaro,2026-06-02,2026-06-02,0.0
-16,Floristería Jardín,Marta Plaza,Prospección,2100,Alvaro,2026-06-08,2026-07-25,0.1
-17,Metalúrgica Ebro,Sergio Cruz,Propuesta enviada,39000,Alvaro,2026-05-02,2026-06-08,0.5
-18,Editorial Faro,Beatriz Lara,Cualificación,8800,Alvaro,2026-06-09,2026-07-12,0.35
-19,Restaurante El Roble,Andrés Gil,Negociación,9500,Alvaro,2026-06-11,2026-06-28,0.7
-20,Farmacia Centro,Cristina Ramos,Propuesta enviada,5400,Alvaro,2026-05-09,2026-06-14,0.5
-21,Autoescuela Vía Rápida,Marcos Peña,Prospección,4300,Alvaro,2026-06-04,2026-08-01,0.1
-22,Consultora Norte,Laura Bravo,Negociación,64000,Alvaro,2026-06-10,2026-07-08,0.85
-23,Carpintería Roble Fino,Víctor Sáez,Cualificación,13700,Alvaro,2026-04-30,2026-06-16,0.2
-24,Spa Aguas Claras,Rocío Herrero,Propuesta enviada,22000,Alvaro,2026-06-06,2026-06-24,0.6
+1,Logística Tajo,Pedro Nieto,Negociación,42000,Álvaro,2026-07-24,2026-08-11,0.8
+2,Consultora Norte,Marta Ruiz,Propuesta enviada,64000,Álvaro,2026-07-22,2026-08-21,0.6
+3,Innovatech,Luis Vera,Cualificación,18000,Carlos,2026-07-25,2026-08-26,0.4
+4,Grupo Salinas,Ana Gil,Negociación,37000,Álvaro,2026-07-21,2026-08-06,0.75
+5,Delta Foods,Sara Pons,Propuesta enviada,28000,Carlos,2026-07-23,2026-08-16,0.55
+6,Nube9,Iván Soto,Prospección,12000,Álvaro,2026-07-20,2026-09-05,0.2
+7,Vera & Co,Nadia Haddad,Cualificación,22000,Carlos,2026-07-19,2026-08-31,0.35
+8,Astra Bienes,Diego Ramos,Negociación,51000,Álvaro,2026-07-26,2026-08-14,0.7
+9,Ferrer Retail,Lucía Ferrer,Propuesta enviada,33000,Carlos,2026-07-18,2026-08-18,0.5
+10,OrbitMedia,Pablo Ortiz,Cualificación,16000,Álvaro,2026-07-24,2026-08-24,0.3
+11,Redes Cantábrico,Hugo Marín,Negociación,35000,Álvaro,2026-07-25,2026-07-29,0.7
+12,Aelia Software,Berta Lima,Propuesta enviada,27000,Carlos,2026-07-24,2026-07-31,0.55
+13,Metalúrgica Ebro,Sergio Cruz,Negociación,39000,Álvaro,2026-07-23,2026-07-24,0.65
+14,Bodegas Ribera Nova,Elena Sanz,Propuesta enviada,26000,Carlos,2026-07-21,2026-07-26,0.5
+15,Domótica Sur,Clara Méndez,Prospección,20000,Álvaro,2026-07-25,2026-08-01,0.2
+16,Casa Mateo,Tomás Ibáñez,Cualificación,24000,Carlos,2026-07-06,2026-08-26,0.3
+17,Grupo Vela,Sofía Romero,Propuesta enviada,30000,Álvaro,2026-07-09,2026-08-22,0.45
+18,Puerto Azul,Nuria Cano,Negociación,45000,Carlos,2026-07-02,2026-08-16,0.6
+19,Solaris SA,Ana García,Cerrado ganado,40000,Álvaro,2026-07-24,2026-07-25,1.0
+20,Grupo Ledesma,Luis Pérez,Cerrado ganado,22000,Carlos,2026-07-22,2026-07-22,1.0
+21,Marina Sur,Marta Ruiz,Cerrado ganado,31000,Álvaro,2026-07-07,2026-07-07,1.0
+22,Vientos SL,Elena Sanz,Cerrado perdido,15000,Carlos,2026-07-21,2026-07-24,0.0
+23,Ática Group,Pablo Ortiz,Cerrado perdido,19000,Álvaro,2026-07-02,2026-07-02,0.0

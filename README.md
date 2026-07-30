@@ -144,17 +144,33 @@ Definidas como constantes al inicio de `generar_informe.py`, para ajustarlas a c
 | Archivo | Qué es |
 |---|---|
 | `generar_informe.py` | El script principal. |
-| `deals.csv` | Datos de ejemplo (24 deals ficticios, sin datos reales). |
+| `generar_datos_demo.py` | Genera `deals.csv` con fechas relativas a hoy (la demo nunca queda desfasada). |
+| `deals.csv` | Datos de ejemplo (23 deals ficticios, sin datos reales). |
 | `informe_semanal.md` | El informe en texto que produce el script (salida de ejemplo). |
 | `informe_semanal.html` | El mismo informe en versión web (tema oscuro + gráfico de barras). |
 | `emails_seguimiento.md` | Emails de seguimiento de los deals en riesgo (IA o plantilla). |
+| `tests/` | 10 pruebas automáticas (pytest) sobre las funciones de cálculo. |
 | `.gitignore` | Qué no se sube al repositorio (caché, claves...). |
+| `LICENSE` | Licencia del proyecto (código visible, no libre). |
 | `README.md` | Este archivo. |
 | `RESUMEN.md` | Resumen breve del proyecto y de los conceptos de Python aplicados. |
 
 ## Stack
 
 Python 3 · `csv` · `datetime` · `html` · (opcional) API de Anthropic
+
+---
+
+## ✅ Pruebas
+
+```bash
+pip install pytest
+python -m pytest -q      # 10 passed
+```
+
+**10 pruebas** en `tests/test_informe.py` que verifican la parte de cálculo: el pipeline total y ponderado, la detección de deals estancados y en riesgo, la tasa de conversión, el ticket medio, y que la lectura del CSV **descarta las filas con datos no válidos sin romperse**.
+
+> Los datos de ejemplo se generan con `python generar_datos_demo.py`, que escribe `deals.csv` con fechas relativas a hoy. Así el informe de muestra nunca sale "en llamas" por fechas viejas.
 
 ---
 
@@ -205,6 +221,14 @@ Proyecto pensado también como práctica de programación. Conceptos que pone en
 
 **Álvaro Utazu Lázaro** · En formación como AI Engineer
 Proyecto desarrollado con [Claude Code](https://claude.ai) (Anthropic) como parte del programa de aprendizaje práctico de IA.
+
+---
+
+## 📄 Licencia
+
+Código **visible pero no libre** (*source-available*). Puedes ver, leer y ejecutar este proyecto para **evaluarlo**, pero queda prohibido copiarlo, modificarlo, redistribuirlo o reutilizarlo sin permiso escrito del autor. Consulta el archivo [LICENSE](LICENSE).
+
+© 2026 Álvaro Utazu Lázaro. Todos los derechos reservados.
 
 ---
 

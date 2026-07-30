@@ -1,6 +1,7 @@
 # Caché de Python (se regenera sola, no debe subirse)
 __pycache__/
 *.py[cod]
+.pytest_cache/
 
 # Entornos virtuales
 .venv/

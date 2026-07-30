@@ -1,44 +1,37 @@
-# Informe semanal de pipeline · 13/06/2026
+# Informe semanal de pipeline · 27/07/2026
 
 ## Resumen
-- Deals activos: **22**
-- Pipeline total: **439.900 €**
-- Pipeline ponderado (por probabilidad): **271.500 €**
-- Dinero en riesgo: **122.700 €** (28 % del pipeline)
-- Ticket medio del deal activo: **19.995 €**
-- Tasa de conversión (histórica, todos los cierres): **50 %**
-- Previsión ponderada de cierre este mes: **126.620 €** (10 deals)
-- Cerrados esta semana (últimos 7 días): 1 ganados, 0 perdidos
+- Deals activos: **18**
+- Pipeline total: **569.000 €**
+- Pipeline ponderado (por probabilidad): **318.850 €**
+- Dinero en riesgo: **85.000 €** (15 % del pipeline)
+- Ticket medio del deal activo: **31.611 €**
+- Tasa de conversión (histórica, todos los cierres): **60 %**
+- Previsión ponderada de cierre este mes: **39.350 €** (2 deals)
+- Cerrados esta semana (últimos 7 días): 2 ganados, 1 perdidos
 
 ## Pipeline por etapa
-- Negociación: 6 deals · 234.500 €
-- Propuesta enviada: 7 deals · 140.500 €
-- Cualificación: 5 deals · 46.300 €
-- Prospección: 4 deals · 18.600 €
+- Negociación: 6 deals · 249.000 €
+- Propuesta enviada: 6 deals · 208.000 €
+- Cualificación: 4 deals · 80.000 €
+- Prospección: 2 deals · 32.000 €
 
 ## 🏆 Mayores oportunidades (top 3 por importe)
-- **Consultora Norte** (64.000 €) — Negociación, probabilidad 85 %.
-- **Hotel Mirasierra** (58.000 €) — Negociación, probabilidad 70 %.
-- **Seguros Atlante** (46.000 €) — Negociación, probabilidad 80 %.
+- **Consultora Norte** (64.000 €) — Propuesta enviada, probabilidad 60 %.
+- **Astra Bienes** (51.000 €) — Negociación, probabilidad 70 %.
+- **Puerto Azul** (45.000 €) — Negociación, probabilidad 60 %.
 
 ## ⚠️ Deals en riesgo
 - **Metalúrgica Ebro** (39.000 €) — fecha de cierre ya superada.
-- **Bodegas Ribera Nova** (27.500 €) — fecha de cierre ya superada.
-- **Distribuciones Frío Sur** (21.000 €) — fecha de cierre ya superada.
-- **Carpintería Roble Fino** (13.700 €) — cierre inminente pero aún en fase temprana.
-- **Transportes Duero** (12.500 €) — fecha de cierre ya superada.
-- **Talleres Hermanos Ruiz** (9.000 €) — cierre inminente pero aún en fase temprana.
+- **Bodegas Ribera Nova** (26.000 €) — fecha de cierre ya superada.
+- **Domótica Sur** (20.000 €) — cierre inminente pero aún en fase temprana.
 
 ## 💤 Deals estancados (sin actividad > 14 días)
-- **Transportes Duero** (12.500 €) — 46 días sin contacto, en Cualificación.
-- **Carpintería Roble Fino** (13.700 €) — 44 días sin contacto, en Cualificación.
-- **Metalúrgica Ebro** (39.000 €) — 42 días sin contacto, en Propuesta enviada.
-- **Distribuciones Frío Sur** (21.000 €) — 39 días sin contacto, en Propuesta enviada.
-- **Bodegas Ribera Nova** (27.500 €) — 36 días sin contacto, en Propuesta enviada.
-- **Farmacia Centro** (5.400 €) — 35 días sin contacto, en Propuesta enviada.
-- **Talleres Hermanos Ruiz** (9.000 €) — 32 días sin contacto, en Prospección.
+- **Puerto Azul** (45.000 €) — 25 días sin contacto, en Negociación.
+- **Casa Mateo** (24.000 €) — 21 días sin contacto, en Cualificación.
+- **Grupo Vela** (30.000 €) — 18 días sin contacto, en Propuesta enviada.
 
 ## ✅ Acciones recomendadas para esta semana
 1. Rescatar **Metalúrgica Ebro**: fecha de cierre ya superada.
 2. Rescatar **Bodegas Ribera Nova**: fecha de cierre ya superada.
-3. Empujar el mayor deal abierto: **Consultora Norte** (64.000 €).
+3. Retomar contacto con **Puerto Azul** (45.000 €).
